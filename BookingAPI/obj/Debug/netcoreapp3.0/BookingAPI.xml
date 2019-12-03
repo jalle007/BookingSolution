@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookingAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BookingApi.Controllers.BookingController.GetSeed">
+            <summary>
+            Seed data from Excel file first.
+            </summary>
+        </member>
+        <member name="M:BookingApi.Controllers.BookingController.Create(BookingApi.Models.Booking)">
+            <summary>
+            Creates a Booking.
+            </summary>
+            <param name="item"></param>
+            <returns>A newly created Booking</returns>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>            
+        </member>
+        <member name="M:BookingApi.Controllers.CapacityController.Create(BookingApi.Models.CapacityProvider)">
+            <summary>
+            Creates a CapacityProvider.
+            </summary>
+            <param name="item"></param>
+            <returns>A newly created CapacityProvider</returns>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>            
+        </member>
+        <member name="M:BookingApi.Controllers.CapacityController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific CapacityProvider.
+            </summary>
+            <param name="id"></param>        
+        </member>
+    </members>
+</doc>

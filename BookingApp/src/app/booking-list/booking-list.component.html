@@ -1,0 +1,49 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no data -->
+    <div class="no-data text-center" *ngIf="Bookings == null || Bookings.length == 0">
+      <p>There are no bookings added yet!</p>
+      <p>Seed some random data by clicking button bellow!</p>
+      <button class="primary" (click)="GetSeed()">Seed data</button>
+    </div>
+  
+    <!-- Bookings list table, it hides when there is no Booking -->
+    <div *ngIf="Bookings == null || Bookings.length !== 0">
+      <h3 class="mb-3 text-center">Bookings List</h3>
+  
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Capacity Provider</th>
+              <th scope="col">Object name</th>
+              <th scope="col">Date From</th>
+              <th scope="col">Date To</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Currency</th>
+              <th scope="col">Comment</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Booking of Bookings">
+              <td>{{Booking.id}}</td>
+              <td>{{Booking.capacityProvider.name}}</td>
+              <td>{{Booking.object_name}}</td>
+              <td>{{Booking.date_from}}</td>
+              <td>{{Booking.date_to}}</td>
+              <td>{{Booking.amount}}</td>
+              <td>{{Booking.currency}}</td>
+              <td>{{Booking.comment}}</td>
+              <td>
+                <button class="delete primary" (click)="deleteBooking(Booking.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
